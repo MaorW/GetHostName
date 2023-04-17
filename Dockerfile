@@ -1,8 +1,8 @@
-FROM --platform=$BUILDPLATFORM python:3.10.11-slim AS builder
+FROM python:alpine3.17
 WORKDIR /app
 
 COPY . .
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip3 install -r requirements.txt
+EXPOSE 443
+RUN pip3 install -r requirements.txt
 
 CMD ["python" , "app.py"]

@@ -1,2 +1,1 @@
-flask
-platform
+Flask==2.2.3
